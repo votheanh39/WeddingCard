@@ -43,7 +43,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, isAdmin, onImageUploa
 
   if (!images || images.length === 0) {
     return (
-        <div className="w-full aspect-[4/3] bg-stone-200 rounded-lg flex items-center justify-center text-stone-500 relative">
+        <div className="w-full aspect-[3/4] bg-stone-200 rounded-lg flex items-center justify-center text-stone-500 relative">
             <p>No images yet.</p>
             {isAdmin && (
                 <div className="absolute bottom-4 right-4">
@@ -69,7 +69,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, isAdmin, onImageUploa
 
   return (
     <div className="w-full h-auto mx-auto relative group">
-      <div style={{ backgroundImage: `url(${images[currentIndex]})` }} className="w-full aspect-[4/3] rounded-lg bg-center bg-cover duration-500 shadow-xl ring-1 ring-stone-200"></div>
+      <div style={{ backgroundImage: `url(${images[currentIndex]})` }} className="w-full aspect-[3/4] rounded-lg bg-center bg-cover duration-500 shadow-xl ring-1 ring-stone-200"></div>
       
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-1/2 -translate-y-1/2 left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">

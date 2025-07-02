@@ -4,10 +4,13 @@ import ImageSlider from './components/ImageSlider';
 import Countdown from './components/Countdown';
 
 const initialImages = [
-  'https://picsum.photos/id/1015/800/600',
-  'https://picsum.photos/id/1018/800/600',
-  'https://picsum.photos/id/1025/800/600',
-  'https://picsum.photos/id/1040/800/600',
+  '/512076695_1945162932967210_7261401508778253852_n.jpg',
+  '/512234748_24350606611192014_5700611619477554383_n.jpg',
+  '/512701718_2711709819026386_5016352024319123039_n.jpg',
+  '/513111516_1539268823483161_5053458759972964968_n.jpg',
+  '/513304312_2222014114885120_4308547420775683872_n.jpg',
+  '/514226705_1248082592817943_7403179734982291791_n.jpg',
+  '/514393770_1075732177308897_6387695316956925825_n.jpg',
 ];
 
 const App: React.FC = () => {
@@ -31,7 +34,7 @@ const App: React.FC = () => {
   const handleImageUpload = useCallback((file: File) => {
     if (file && file.type.startsWith('image/')) {
       const newImageUrl = URL.createObjectURL(file);
-      setImages(prevImages => [...prevImages, newImageUrl]);
+      setImages((prevImages: string[]) => [...prevImages, newImageUrl]);
     } else {
       alert('Please upload a valid image file.');
     }
