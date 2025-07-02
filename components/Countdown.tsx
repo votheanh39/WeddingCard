@@ -70,7 +70,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
     <div className="flex justify-center my-6">
       {timerComponents.length ? timerComponents : <span className="text-2xl text-amber-800 font-serif">The big day is here!</span>}
     </div>
-  );
+);
 };
 
 export default Countdown;

@@ -46,41 +46,74 @@ const App: React.FC = () => {
     <div className="bg-stone-50 text-stone-800 min-h-screen">
       <main className="max-w-3xl mx-auto p-4 sm:p-8">
         <header className="text-center my-12">
-          <p className="text-lg text-stone-600 tracking-widest uppercase mb-4">Together with their families</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-amber-900">
-            Dang Hoai Nem
-          </h1>
-          <div className="text-4xl my-4 text-stone-500">&</div>
-          <h1 className="text-5xl md:text-7xl font-serif text-amber-900">
-            Bui Le Na
-          </h1>
-          <p className="text-lg text-stone-600 tracking-widest uppercase mt-4">Invite you to celebrate their wedding</p>
+          <p className="text-lg text-stone-600 tracking-widest uppercase mb-4">Cùng với gia đình hai bên</p>
+          <h1 className="text-4xl md:text-5xl text-amber-900" style={{ fontFamily: 'Great Vibes, cursive', fontWeight: 700 }}>
+  Dang Hoai Nem
+</h1>
+<div className="text-3xl my-2 text-stone-500">&</div>
+<h1 className="text-4xl md:text-5xl text-amber-900" style={{ fontFamily: 'Great Vibes, cursive', fontWeight: 700 }}>
+  Bui Le Na
+</h1>
+          <p className="text-lg text-stone-600 tracking-widest uppercase mt-4">Trân trọng mời</p>
         </header>
 
-        <section className="bg-white shadow-lg rounded-xl p-8 my-12 text-center ring-1 ring-stone-200">
-            <h2 className="text-3xl font-serif text-amber-800 mb-4">Dear {guestName},</h2>
-            <p className="text-stone-600 leading-relaxed">
-                We would be honored to have you join us as we begin our new life together. Your presence is the greatest gift we could ask for.
-            </p>
-        </section>
+        <div className="text-center my-12">
+          <h2 className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>{guestName}</h2>
+        </div>
 
-        <section className="text-center my-12">
-            <h2 className="text-4xl font-serif text-stone-800 mb-2">Save The Date</h2>
-            <p className="text-xl text-stone-600">July 20, 2025</p>
+        <section className="bg-white shadow-lg rounded-xl p-8 my-12 text-center ring-1 ring-stone-200">
+          <div className="flex flex-col items-center my-6">
+            <div className="flex flex-row justify-center items-center gap-8 md:gap-16 w-full">
+  {/* Time */}
+  <div className="flex flex-col items-center flex-shrink-0 w-20 md:w-28">
+    <div className="w-full border-t-2 border-amber-300 mb-2"></div>
+    <div className="text-3xl md:text-5xl font-bold text-amber-700 font-serif py-2 whitespace-nowrap">17:00</div>
+    <div className="w-full border-b-2 border-amber-300 mt-2"></div>
+  </div>
+  {/* Day/Date/Year column */}
+  <div className="flex flex-col items-center px-4">
+    <span className="text-lg md:text-xl text-amber-600 font-semibold whitespace-nowrap">Thứ Bảy</span>
+    <span className="text-6xl md:text-8xl font-extrabold text-amber-900 leading-none drop-shadow-lg" style={{letterSpacing: '0.05em'}}>20</span>
+    <span className="text-lg md:text-xl text-amber-600 font-semibold whitespace-nowrap">Năm 2025</span>
+  </div>
+  {/* Month */}
+  <div className="flex flex-col items-center flex-shrink-0 w-20 md:w-28">
+    <div className="w-full border-t-2 border-amber-300 mb-2"></div>
+    <div className="text-2xl md:text-4xl font-bold text-amber-700 font-serif py-2 whitespace-nowrap">Tháng 7</div>
+    <div className="w-full border-b-2 border-amber-300 mt-2"></div>
+  </div>
+</div>
+          </div>
+          {/* <div className="mt-4">
             <Countdown targetDate={weddingDate} />
+          </div> */}
         </section>
 
-        <section className="bg-white shadow-lg rounded-xl p-8 my-12 text-center ring-1 ring-stone-200">
-          <h3 className="text-3xl font-serif text-amber-800 mb-6">Ceremony & Reception</h3>
-          <p className="text-lg font-semibold text-stone-700">Saturday, July 20th, 2025</p>
-          <p className="text-lg text-stone-600">at 5:00 PM</p>
-          <div className="w-24 h-px bg-stone-300 mx-auto my-6"></div>
-          <p className="text-lg font-semibold text-stone-700">Wedding Palace</p>
-          <p className="text-lg text-stone-600">Ha Dong, Ha Noi</p>
-        </section>
+        <section className="bg-white shadow-lg rounded-xl p-8 my-12 text-center ring-2 ring-amber-200 border border-amber-100">
+  <h3 className="text-2xl md:text-3xl font-serif text-amber-800 mb-3 tracking-wide">Địa điểm tổ chức</h3>
+  <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-6">
+    <div className="flex-1">
+      <p className="text-lg md:text-xl text-stone-700 mb-3 leading-relaxed">
+        <span className="font-semibold text-amber-800">Trung tâm tiệc cưới</span><br/>
+        <span>Hà Đông, Hà Nội</span>
+      </p>
+      <div className="mt-2 text-stone-500 text-sm italic">Vui lòng quét mã QR để xem bản đồ</div>
+    </div>
+    <div className="flex-1 flex flex-col items-center">
+      <div className="border-2 border-amber-300 rounded-xl p-2 bg-stone-50 shadow-inner">
+        <img src="/images/qr_location.jpg" alt="QR địa điểm tổ chức" className="w-40 md:w-56 rounded-lg shadow-sm" />
+      </div>
+      <div className="mt-2 text-xs text-stone-400">Quét mã để dẫn đường</div>
+    </div>
+  </div>
+</section>
 
-        <section className="my-12">
-            <h2 className="text-4xl font-serif text-stone-800 mb-6 text-center">Our Moments</h2>
+<div className="flex justify-center my-8">
+  <Countdown targetDate={weddingDate} />
+</div>
+
+<section className="my-12">
+            <h2 className="text-4xl font-serif text-stone-800 mb-6 text-center">Khoảnh khắc của chúng tôi</h2>
             <ImageSlider 
                 images={images} 
                 isAdmin={isAdmin} 
@@ -89,7 +122,7 @@ const App: React.FC = () => {
         </section>
 
         <footer className="text-center mt-16 mb-8">
-            <p className="text-2xl font-serif text-amber-900">With Love,</p>
+            <p className="text-2xl font-serif text-amber-900">Thân ái,</p>
             <p className="text-2xl font-serif text-amber-900">Nem & Na</p>
         </footer>
       </main>

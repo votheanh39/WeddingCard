@@ -44,13 +44,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, isAdmin, onImageUploa
   if (!images || images.length === 0) {
     return (
         <div className="w-full aspect-[3/4] bg-stone-200 rounded-lg flex items-center justify-center text-stone-500 relative">
-            <p>No images yet.</p>
+            <p>Chưa có ảnh nào.</p>
             {isAdmin && (
                 <div className="absolute bottom-4 right-4">
                     <button
                         onClick={handleUploadClick}
                         className="bg-amber-800 text-white p-3 rounded-full hover:bg-amber-900 transition-colors shadow-lg"
-                        aria-label="Upload image"
+                        aria-label="Tải ảnh lên"
                     >
                         <UploadIcon className="w-6 h-6" />
                     </button>
@@ -97,7 +97,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, isAdmin, onImageUploa
           <button
             onClick={handleUploadClick}
             className="bg-amber-800 text-white p-3 rounded-full hover:bg-amber-900 transition-colors shadow-lg"
-            aria-label="Upload image"
+            aria-label="Tải ảnh lên"
           >
             <UploadIcon className="w-6 h-6" />
           </button>
