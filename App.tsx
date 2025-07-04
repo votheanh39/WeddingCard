@@ -21,11 +21,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const name = params.get('name');
+    const to = params.get('to');
     const admin = params.get('admin');
 
-    if (name) {
-      setGuestName(name.replace(/_/g, ' '));
+    if (to) {
+      setGuestName(to.replace(/_/g, ' '));
     }
     if (admin === 'true') {
       setIsAdmin(true);
