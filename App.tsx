@@ -17,7 +17,8 @@ const App: React.FC = () => {
   const [guestName, setGuestName] = useState<string>('Bạn Thế Anh');
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [images, setImages] = useState<string[]>(initialImages);
-  const [showToast, setShowToast] = useState(false);
+  // showToast: false | true | 'address'
+  const [showToast, setShowToast] = useState<false | true | 'address'>(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -137,14 +138,48 @@ const App: React.FC = () => {
             <div className="border-2 border-amber-300 rounded-xl p-2 bg-stone-50 shadow-inner my-4 flex justify-center items-center">
               <img src="/images/qr_location.jpg" alt="QR địa điểm tổ chức" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-sm" />
             </div>
-            <a
-              href="https://maps.app.goo.gl/wABzVA7dVAALayNe8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold"
-            >
-              Mở bản đồ
-            </a>
+            <div className="flex flex-col items-center gap-2 w-full md:w-64 mx-auto">
+              <a
+                href="https://maps.app.goo.gl/wABzVA7dVAALayNe8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button
+                  className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold flex items-center justify-center gap-2 mb-1"
+                  type="button"
+                >
+                  Mở bản đồ
+                </button>
+              </a>
+              <button
+                className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold flex items-center justify-center gap-2"
+                onClick={async () => {
+                  const addressText = `NHÀ HÀNG CẦU AM PALACE\nSẢNH TẦNG 3\nSỐ 9 CHU VĂN AN, YẾT KIÊU, HÀ ĐÔNG, HÀ NỘI`;
+                  const mapUrl = 'https://maps.app.goo.gl/wABzVA7dVAALayNe8';
+                  if (navigator.share) {
+                    try {
+                      await navigator.share({
+                        title: 'Địa chỉ tiệc cưới Nam & Na',
+                        text: `${addressText}`,
+                        url: mapUrl,
+                      });
+                      
+                    } catch (e) {
+                      // fallback to clipboard if share is cancelled or fails
+                      navigator.clipboard.writeText(`${addressText}\n${mapUrl}`);
+                      
+                    }
+                  } else {
+                    navigator.clipboard.writeText(`${addressText}\n${mapUrl}`);
+
+                  }
+                }}
+                type="button"
+              >
+                Chia sẻ địa chỉ
+              </button>
+            </div>
           </div>
         </section>
 
@@ -182,9 +217,22 @@ const App: React.FC = () => {
             <div className="border-2 border-amber-300 rounded-xl p-2 bg-stone-50 shadow-inner inline-block mb-4">
               <img src="/images/qr_bank.png" alt="QR chuyển khoản mừng cưới" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-sm" />
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 w-full md:w-64 mx-auto">
+              <a
+                href="https://img.vietqr.io/image/acb-232551789-compact2.jpg?accountName=DANG%20HOAI%20NAM&amount=0&addInfo=Mung%20cuoi%20NamNa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button
+                  className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold flex items-center justify-center gap-2"
+                  type="button"
+                >
+                  Chuyển khoản ngay
+                </button>
+              </a>
               <button
-                className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold"
+                className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg shadow transition-colors text-base md:text-lg font-semibold flex items-center justify-center gap-2"
                 onClick={() => {
                   navigator.clipboard.writeText('232551789');
                   setShowToast(true);
@@ -195,12 +243,13 @@ const App: React.FC = () => {
                 Sao chép số tài khoản
               </button>
             </div>
-            {showToast && (
+            </div>
+            {(showToast === true) && (
               <div className="fixed left-1/2 bottom-8 transform -translate-x-1/2 bg-amber-600 text-white px-4 py-2 rounded-lg shadow-lg text-sm font-semibold z-50 transition-opacity animate-fade-in-out">
                 Đã sao chép số tài khoản!
               </div>
             )}
-          </div>
+
         </section>
 
         <footer className="text-center mt-16 mb-8">
