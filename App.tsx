@@ -98,7 +98,7 @@ const App: React.FC = () => {
         <section className="bg-gradient-to-br from-rose-50 to-amber-50 shadow-lg shadow-amber-200/40 rounded-2xl p-6 md:p-8 my-8 text-center ring-4 ring-amber-100/60 border-2 border-amber-300">
           <div className="flex flex-col items-center my-2">
             <span className="text-3xl md:text-4xl mb-2" role="img" aria-label="Calendar">📅</span>
-            <div className="flex flex-row justify-center items-center gap-8 md:gap-16 w-full">
+            <div className="flex flex-row justify-center items-center gap-4 md:gap-8 w-full max-w-xs mx-auto">
               {/* Time */}
               <div className="flex flex-col items-center flex-shrink-0 w-20 md:w-28">
                 <div className="w-full border-t-2 border-amber-300 mb-2"></div>
@@ -219,7 +219,7 @@ const App: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2 w-full md:w-64 mx-auto">
               <a
-                href="https://img.vietqr.io/image/acb-232551789-compact2.jpg?accountName=DANG%20HOAI%20NAM&amount=0&addInfo=Mung%20cuoi%20NamNa"
+                href="https://vietqr.net/ACB/232551789?addInfo=Mung%20cuoi%20NamNa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
