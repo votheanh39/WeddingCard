@@ -14,7 +14,7 @@ const initialImages = [
 ];
 
 const App: React.FC = () => {
-  const [guestName, setGuestName] = useState<string>('Bạn và người thương');
+  const [guestName, setGuestName] = useState<string>('Bạn Thế Anh');
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [images, setImages] = useState<string[]>(initialImages);
   const [showToast, setShowToast] = useState(false);
@@ -80,11 +80,23 @@ const App: React.FC = () => {
         </header>
 
         <div className="text-center my-6">
-          <h2 className="text-4xl md:text-5xl mb-1" style={{ fontFamily: 'Dancing Script, cursive' }}>{guestName}</h2>
+          <h2
+            className="text-3xl md:text-5xl mb-1 text-amber-900 font-light tracking-widest"
+            style={{
+              fontFamily: 'Montserrat, Arial, sans-serif',
+              fontWeight: 400,
+              textShadow: '0 2px 8px rgba(0,0,0,0.10), 0 1px 0 #fff',
+              letterSpacing: '0.08em',
+              lineHeight: 1.1
+            }}
+          >
+            {guestName}
+          </h2>
         </div>
 
         <section className="bg-gradient-to-br from-rose-50 to-amber-50 shadow-lg shadow-amber-200/40 rounded-2xl p-6 md:p-8 my-8 text-center ring-4 ring-amber-100/60 border-2 border-amber-300">
           <div className="flex flex-col items-center my-2">
+            <span className="text-3xl md:text-4xl mb-2" role="img" aria-label="Calendar">📅</span>
             <div className="flex flex-row justify-center items-center gap-8 md:gap-16 w-full">
               {/* Time */}
               <div className="flex flex-col items-center flex-shrink-0 w-20 md:w-28">
@@ -113,6 +125,9 @@ const App: React.FC = () => {
 
         <section className="bg-gradient-to-br from-rose-50 to-amber-50 shadow-lg shadow-amber-200/40 rounded-2xl p-6 md:p-8 my-8 text-center ring-4 ring-amber-100/60 border-2 border-amber-300">
           <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mb-2">
+              <span className="text-3xl md:text-4xl mb-2" role="img" aria-label="Location">📍</span>
+            </div>
             <p className="text-lg md:text-xl text-stone-700 mb-3 leading-relaxed">
               <span className="block">NHÀ HÀNG</span>
               <span className="block font-semibold text-amber-800 text-2xl md:text-3xl" style={{ fontWeight: 900, letterSpacing: '1px' }}>CẦU AM PALACE</span>
@@ -134,7 +149,21 @@ const App: React.FC = () => {
         </section>
 
         <section className="my-8">
-          <h2 className="text-2xl md:text-4xl font-serif text-stone-800 mb-8 text-center tracking-wide whitespace-nowrap">Khoảnh khắc của chúng tôi</h2>
+          <div className="flex flex-col items-center mb-2">
+            <span className="text-3xl md:text-4xl mb-2" role="img" aria-label="Album">📸</span>
+            <h2
+              className="text-2xl md:text-3xl text-amber-900 font-light tracking-widest mb-6 text-center whitespace-nowrap"
+              style={{
+                fontFamily: 'Montserrat, Arial, sans-serif',
+                fontWeight: 400,
+                textShadow: '0 2px 8px rgba(0,0,0,0.10), 0 1px 0 #fff',
+                letterSpacing: '0.08em',
+                lineHeight: 1.1
+              }}
+            >
+              Khoảnh khắc của chúng tôi
+            </h2>
+          </div>
           <ImageSlider
             images={images}
             isAdmin={isAdmin}
@@ -143,6 +172,9 @@ const App: React.FC = () => {
         </section>
 
         <section className="bg-gradient-to-br from-rose-50 to-amber-50 shadow-lg shadow-amber-200/40 rounded-2xl p-6 md:p-8 my-8 text-center ring-4 ring-amber-100/60 border-2 border-amber-300">
+          <div className="flex flex-col items-center mb-2">
+            <span className="text-3xl md:text-4xl mb-2" role="img" aria-label="Gift">🎁</span>
+          </div>
           <p className="text-lg md:text-xl text-stone-700 mb-4 leading-relaxed">
              Không cần phải ở gần, chỉ cần bạn nhớ đến là tụi mình đã vui lắm rồi. Xin cảm ơn bạn thật nhiều! 💖
           </p>
@@ -172,8 +204,30 @@ const App: React.FC = () => {
         </section>
 
         <footer className="text-center mt-16 mb-8">
-          <p className="text-2xl font-serif text-amber-900">Thân ái,</p>
-          <p className="text-2xl font-serif text-amber-900">Nam & Na</p>
+          <p
+            className="text-2xl md:text-4xl text-amber-900 font-light tracking-widest mb-2"
+            style={{
+              fontFamily: 'Montserrat, Arial, sans-serif',
+              fontWeight: 400,
+              textShadow: '0 2px 8px rgba(0,0,0,0.10), 0 1px 0 #fff',
+              letterSpacing: '0.08em',
+              lineHeight: 1.1
+            }}
+          >
+            Thân ái,
+          </p>
+          <p
+            className="text-2xl md:text-4xl text-amber-900 font-light tracking-widest"
+            style={{
+              fontFamily: 'Montserrat, Arial, sans-serif',
+              fontWeight: 400,
+              textShadow: '0 2px 8px rgba(0,0,0,0.10), 0 1px 0 #fff',
+              letterSpacing: '0.08em',
+              lineHeight: 1.1
+            }}
+          >
+            Nam & Na
+          </p>
         </footer>
       </main>
     </div>
