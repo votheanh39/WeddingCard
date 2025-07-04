@@ -219,7 +219,7 @@ const App: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2 w-full md:w-64 mx-auto">
               <a
-                href="https://vietqr.net/ACB/232551789?addInfo=Mung%20cuoi%20NamNa"
+                href="https://dl.vietqr.io/pay?app=acb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
