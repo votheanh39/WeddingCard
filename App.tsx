@@ -14,7 +14,7 @@ const initialImages = [
 ];
 
 const App: React.FC = () => {
-  const [guestName, setGuestName] = useState<string>('Bạn');
+  const [guestName, setGuestName] = useState<string>('');
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [images, setImages] = useState<string[]>(initialImages);
   // showToast: false | true | 'address'
@@ -77,7 +77,7 @@ const App: React.FC = () => {
           >
             Bùi Lê Na
           </h1>
-          <p className="text-lg text-stone-600 tracking-widest uppercase mt-4">Trân trọng mời</p>
+          <p className="text-lg text-stone-600 tracking-widest uppercase mt-4">Trân trọng kính mời</p>
         </header>
 
         <div className="text-center my-6">
