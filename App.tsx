@@ -107,7 +107,7 @@ const App: React.FC = () => {
               </div>
               {/* Day/Date/Year column */}
               <div className="flex flex-col items-center px-4">
-                <span className="text-lg md:text-xl text-amber-600 font-semibold whitespace-nowrap">Thứ Bảy</span>
+                <span className="text-lg md:text-xl text-amber-600 font-semibold whitespace-nowrap">Chủ Nhật</span>
                 <span className="text-6xl md:text-8xl font-extrabold text-amber-900 leading-none drop-shadow-lg" style={{ letterSpacing: '0.05em' }}>20</span>
                 <span className="text-lg md:text-xl text-amber-600 font-semibold whitespace-nowrap">Năm 2025</span>
               </div>
