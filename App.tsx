@@ -14,7 +14,7 @@ const initialImages = [
 ];
 
 const App: React.FC = () => {
-  const [guestName, setGuestName] = useState<string>('Bạn Thế Anh');
+  const [guestName, setGuestName] = useState<string>('Bạn');
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [images, setImages] = useState<string[]>(initialImages);
   // showToast: false | true | 'address'
